@@ -17,6 +17,12 @@ public class MainKeyController extends KeyAdapter {
     @Resource
     private ActiveScene scene;
 
+    private MainUser mainUser = new MainUser();
+
+    public void init() {
+        scene.items.add(mainUser);
+    }
+
     @Override
     public void keyPressed(KeyEvent e) {
         super.keyPressed(e);
@@ -25,12 +31,16 @@ public class MainKeyController extends KeyAdapter {
                 scene.items.add(new MainUser());
                 break;
             case KeyEvent.VK_UP:
+                mainUser.up();
                 break;
             case KeyEvent.VK_DOWN:
+                mainUser.down();
                 break;
             case KeyEvent.VK_LEFT:
+                mainUser.left();
                 break;
             case KeyEvent.VK_RIGHT:
+                mainUser.right();
                 break;
         }
     }
