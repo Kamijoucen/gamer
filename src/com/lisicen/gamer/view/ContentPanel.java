@@ -1,6 +1,6 @@
-package com.lisicen.tank.view;
+package com.lisicen.gamer.view;
 
-import com.lisicen.tank.view.controller.DrawCallBack;
+import com.lisicen.gamer.view.controller.DrawCallBack;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

@@ -1,6 +1,6 @@
-package com.lisicen.tank.common;
+package com.lisicen.gamer.common;
 
-import com.lisicen.tank.main.Bootstrap;
+import com.lisicen.gamer.main.Bootstrap;
 import org.springframework.context.ApplicationContext;
 
 /**

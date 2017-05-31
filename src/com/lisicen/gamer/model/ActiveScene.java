@@ -1,6 +1,6 @@
-package com.lisicen.tank.model;
+package com.lisicen.gamer.model;
 
-import com.lisicen.tank.common.Utils;
+import com.lisicen.gamer.common.Utils;
 import org.springframework.stereotype.Component;
 
 /**

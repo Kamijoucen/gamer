@@ -1,4 +1,4 @@
-package com.lisicen.tank.main;
+package com.lisicen.gamer.main;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

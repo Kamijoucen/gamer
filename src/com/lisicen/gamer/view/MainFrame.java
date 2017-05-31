@@ -1,19 +1,12 @@
-package com.lisicen.tank.view;
+package com.lisicen.gamer.view;
 
-import com.lisicen.tank.common.ConfigUtils;
-import com.lisicen.tank.common.SpringUtils;
-import com.lisicen.tank.config.MainConfig;
-import com.lisicen.tank.model.ActiveScene;
-import com.lisicen.tank.view.controller.CoreViewDrawTask;
+import com.lisicen.gamer.common.ConfigUtils;
+import com.lisicen.gamer.common.SpringUtils;
+import com.lisicen.gamer.config.MainConfig;
 
-import javax.annotation.Resource;
-import javax.print.attribute.standard.MediaSize;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 /**
  * Created by X6TI on 2017/5/27.

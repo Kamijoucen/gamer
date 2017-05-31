@@ -1,6 +1,4 @@
-package com.lisicen.tank.model;
-
-import java.awt.*;
+package com.lisicen.gamer.model;
 
 /**
  * Created by X6TI on 2017/5/28.

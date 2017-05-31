@@ -1,7 +1,7 @@
-package com.lisicen.tank.view.controller;
+package com.lisicen.gamer.view.controller;
 
-import com.lisicen.tank.model.ActiveScene;
-import com.lisicen.tank.model.GameItem;
+import com.lisicen.gamer.model.ActiveScene;
+import com.lisicen.gamer.model.GameItem;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

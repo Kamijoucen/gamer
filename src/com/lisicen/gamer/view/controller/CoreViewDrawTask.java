@@ -1,4 +1,4 @@
-package com.lisicen.tank.view.controller;
+package com.lisicen.gamer.view.controller;
 
 import org.springframework.stereotype.Component;
 

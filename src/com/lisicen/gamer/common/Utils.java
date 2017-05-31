@@ -1,6 +1,5 @@
-package com.lisicen.tank.common;
+package com.lisicen.gamer.common;
 
-import java.lang.reflect.Method;
 import java.util.*;
 
 /**

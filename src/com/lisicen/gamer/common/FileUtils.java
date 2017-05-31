@@ -1,4 +1,4 @@
-package com.lisicen.tank.common;
+package com.lisicen.gamer.common;
 
 import java.io.File;
 import java.io.IOException;

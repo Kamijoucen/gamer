@@ -1,6 +1,6 @@
-package com.lisicen.tank.main;
+package com.lisicen.gamer.main;
 
-import com.lisicen.tank.view.MainFrame;
+import com.lisicen.gamer.view.MainFrame;
 
 import java.awt.*;
 

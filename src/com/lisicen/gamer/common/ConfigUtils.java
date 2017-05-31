@@ -1,7 +1,7 @@
-package com.lisicen.tank.common;
+package com.lisicen.gamer.common;
 
 import com.alibaba.fastjson.JSON;
-import com.lisicen.tank.config.MainConfig;
+import com.lisicen.gamer.config.MainConfig;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

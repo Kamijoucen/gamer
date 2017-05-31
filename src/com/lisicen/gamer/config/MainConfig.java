@@ -1,4 +1,4 @@
-package com.lisicen.tank.config;
+package com.lisicen.gamer.config;
 
 /**
  * Created by X6TI on 2017/5/27.

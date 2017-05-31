@@ -1,4 +1,4 @@
-package com.lisicen.tank.model;
+package com.lisicen.gamer.model;
 
 import java.awt.*;
 
