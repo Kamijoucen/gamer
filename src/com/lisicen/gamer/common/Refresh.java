@@ -1,10 +1,13 @@
 package com.lisicen.gamer.common;
 
+import com.sun.org.apache.regexp.internal.RE;
+
+import java.sql.Ref;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Created by X6TI on 2017/6/1.
+ * 根据刷新率平滑刷新
  */
 public class Refresh {
     private boolean isDown = false;
@@ -20,21 +23,24 @@ public class Refresh {
         return new Refresh(rate, Executors.newSingleThreadExecutor());
     }
 
-    public void exe(CallBack back) {
+    public static Refresh create(int rate, int poolSize) {
+        return new Refresh(rate, Executors.newFixedThreadPool(poolSize));
+    }
+
+
+    public void execute(int count, CallBack back) {
+        service.execute(() -> {
+            int i = count;
+            while (!isDown && (--i) >= 0) {
+                exe(back);
+            }
+        });
+    }
+
+    public void execute(CallBack back) {
         service.execute(() -> {
             while (!isDown) {
-                long before = System.nanoTime();
-                back.call();
-                long after = System.nanoTime();
-                long total = after - before;
-                if (total > fpsTime) {
-                    continue;
-                }
-                try {
-                    Thread.sleep((fpsTime - total) / 1000000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                exe(back);
             }
         });
     }
@@ -42,5 +48,20 @@ public class Refresh {
     public void shutdown() {
         isDown = true;
         service.shutdown();
+    }
+
+    private void exe(CallBack back) {
+        long before = System.nanoTime();
+        back.call();
+        long after = System.nanoTime();
+        long total = after - before;
+        if (total > fpsTime) {
+            return;
+        }
+        try {
+            Thread.sleep((fpsTime - total) / 1000000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

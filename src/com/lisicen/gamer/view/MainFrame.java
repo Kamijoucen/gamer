@@ -34,6 +34,6 @@ public class MainFrame extends JFrame {
         MainKeyController mainKeyController = SpringUtils.getBean("MainKeyController"); // 界面主控制器
         mainKeyController.init();
         this.addKeyListener(mainKeyController);
-        Refresh.create(FPS).exe((o) -> contentPanel.repaint());
+        Refresh.create(FPS).execute((o) -> contentPanel.repaint());
     }
 }
