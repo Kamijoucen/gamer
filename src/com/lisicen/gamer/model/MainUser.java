@@ -15,6 +15,7 @@ public class MainUser extends GameItem {
 
     private ExecutorService service = Executors.newFixedThreadPool(3);
 
+    @Override
     public void right() {
         service.execute(() -> {
             int loop = 25;
@@ -24,11 +25,14 @@ public class MainUser extends GameItem {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                setX(getX() + 2);
+                synchronized (this) {
+                    x += 2;
+                }
             }
         });
     }
 
+    @Override
     public void left() {
         service.execute(() -> {
             int loop = 25;
@@ -38,11 +42,14 @@ public class MainUser extends GameItem {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                setX(getX() - 2);
+                synchronized (this) {
+                    x -= 2;
+                }
             }
         });
     }
 
+    @Override
     public void up() {
         service.execute(() -> {
             int loop = 25;
@@ -52,11 +59,14 @@ public class MainUser extends GameItem {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                setY(getY() - 2);
+                synchronized (this) {
+                    y -= 2;
+                }
             }
         });
     }
 
+    @Override
     public void down() {
         service.execute(() -> {
             int loop = 25;
@@ -66,7 +76,9 @@ public class MainUser extends GameItem {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                setY(getY() + 2);
+                synchronized (this) {
+                    y += 2;
+                }
             }
         });
     }

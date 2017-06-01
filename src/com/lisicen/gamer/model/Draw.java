@@ -3,7 +3,7 @@ package com.lisicen.gamer.model;
 import java.awt.*;
 
 /**
- * 表示一个能够绘制的对象
+ * 表示一个可绘制的对象
  */
 public interface Draw {
     /**
