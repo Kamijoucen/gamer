@@ -1,14 +1,13 @@
 package com.lisicen.gamer.view;
 
 import com.lisicen.gamer.common.ConfigUtils;
+import com.lisicen.gamer.common.Refresh;
 import com.lisicen.gamer.common.SpringUtils;
 import com.lisicen.gamer.config.MainConfig;
 import com.lisicen.gamer.view.controller.MainKeyController;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.util.concurrent.Executors;
 
 /**
  * Created by X6TI on 2017/5/27.
@@ -19,6 +18,7 @@ public class MainFrame extends JFrame {
     public static final int WIDTH = config.getWidth();
     public static final int HEIGHT = config.getHeight();
     public JPanel contentPanel = SpringUtils.getBean("panel");
+    public static int FPS = ConfigUtils.getConfig().fps;
 
     public MainFrame() {
         init();
@@ -34,8 +34,6 @@ public class MainFrame extends JFrame {
         MainKeyController mainKeyController = SpringUtils.getBean("MainKeyController"); // 界面主控制器
         mainKeyController.init();
         this.addKeyListener(mainKeyController);
-        Runnable runnable = SpringUtils.getBean("CoreViewDrawTask"); // fps控制线程
-        Executors.newSingleThreadExecutor().execute(runnable);
+        Refresh.create(FPS).exe((o) -> contentPanel.repaint());
     }
-
 }

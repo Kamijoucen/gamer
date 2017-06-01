@@ -27,9 +27,6 @@ public class MainKeyController extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         super.keyPressed(e);
         switch (e.getKeyCode()) {
-            case KeyEvent.VK_A:
-                scene.items.add(new MainUser());
-                break;
             case KeyEvent.VK_UP:
                 mainUser.up();
                 break;

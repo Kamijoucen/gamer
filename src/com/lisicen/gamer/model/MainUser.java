@@ -1,6 +1,7 @@
 package com.lisicen.gamer.model;
 
 import com.lisicen.gamer.common.ConfigUtils;
+import com.lisicen.gamer.common.Refresh;
 import com.lisicen.gamer.common.Resource;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
