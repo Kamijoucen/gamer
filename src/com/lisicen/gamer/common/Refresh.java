@@ -1,8 +1,5 @@
 package com.lisicen.gamer.common;
 
-import com.sun.org.apache.regexp.internal.RE;
-
-import java.sql.Ref;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -26,7 +23,6 @@ public class Refresh {
     public static Refresh create(int rate, int poolSize) {
         return new Refresh(rate, Executors.newFixedThreadPool(poolSize));
     }
-
 
     public void execute(int count, CallBack back) {
         service.execute(() -> {

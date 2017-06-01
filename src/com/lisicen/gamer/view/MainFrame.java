@@ -18,15 +18,16 @@ public class MainFrame extends JFrame {
     public static final int WIDTH = config.getWidth();
     public static final int HEIGHT = config.getHeight();
     public JPanel contentPanel = SpringUtils.getBean("panel");
-    public static int FPS = ConfigUtils.getConfig().fps;
+    public static int FPS = config.fps;
 
     public MainFrame() {
         init();
-        this.setContentPane(contentPanel);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setContentPane(contentPanel);
         this.setSize(WIDTH, HEIGHT);
         this.setLocation(((int) screenSize.getWidth() >> 1) - (WIDTH >> 1), ((int) screenSize.getHeight() >> 1) - (HEIGHT >> 1));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setResizable(false);
         this.setVisible(true);
     }
 
@@ -34,6 +35,6 @@ public class MainFrame extends JFrame {
         MainKeyController mainKeyController = SpringUtils.getBean("MainKeyController"); // 界面主控制器
         mainKeyController.init();
         this.addKeyListener(mainKeyController);
-        Refresh.create(FPS).execute((o) -> contentPanel.repaint());
+        Refresh.create(FPS).execute((args) -> contentPanel.repaint());
     }
 }
