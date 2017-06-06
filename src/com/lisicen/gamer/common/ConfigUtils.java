@@ -3,6 +3,9 @@ package com.lisicen.gamer.common;
 import com.alibaba.fastjson.JSON;
 import com.lisicen.gamer.config.MainConfig;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -11,12 +14,28 @@ import java.nio.file.Paths;
  */
 public class ConfigUtils {
 
-    private static final String configName = "config.json";
+    /**
+     * 配置的JSON正文
+     */
     private static final String content;
-    private static final MainConfig config;
+
+    /**
+     *
+     */
+    public static final MainConfig config;
+
+    private static final String configName = "config.json";
+    private static final URL CONFIG_URL = ConfigUtils.class.getClassLoader().getResource(configName);
+
 
     static {
-        Path configPath = Paths.get(FileUtils.CLASS_PATH + configName);
+        URI uri = null;
+        try {
+            uri = CONFIG_URL.toURI();
+        } catch (URISyntaxException e) {
+            System.exit(-1);
+        }
+        Path configPath = Paths.get(uri);
         content = FileUtils.readFile(configPath);
         config = JSON.parseObject(content, MainConfig.class);
     }

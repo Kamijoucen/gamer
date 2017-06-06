@@ -2,6 +2,7 @@ package com.lisicen.gamer.common;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -10,7 +11,6 @@ import java.nio.file.Path;
  */
 public class FileUtils {
     public static final String fg = File.separator;
-    public static final String CLASS_PATH = FileUtils.class.getClassLoader().getResource("").getPath().substring(1);
 
     public static String readFile(Path path) {
         byte[] bytes = new byte[0];

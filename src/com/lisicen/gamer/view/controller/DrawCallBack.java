@@ -2,6 +2,7 @@ package com.lisicen.gamer.view.controller;
 
 import com.lisicen.gamer.model.ActiveScene;
 import com.lisicen.gamer.model.GameItem;
+import com.lisicen.gamer.view.MainFrame;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
