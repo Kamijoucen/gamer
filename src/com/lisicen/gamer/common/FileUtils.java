@@ -13,7 +13,7 @@ public class FileUtils {
     public static final String fg = File.separator;
 
     public static String readFile(Path path) {
-        byte[] bytes = new byte[0];
+        byte[] bytes = null;
         try {
             bytes = Files.readAllBytes(path);
         } catch (IOException e) {

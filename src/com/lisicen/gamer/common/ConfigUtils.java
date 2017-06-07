@@ -14,19 +14,9 @@ import java.nio.file.Paths;
  */
 public class ConfigUtils {
 
-    /**
-     * 配置的JSON正文
-     */
     private static final String content;
-
-    /**
-     *
-     */
-    public static final MainConfig config;
-
-    private static final String configName = "config.json";
-    private static final URL CONFIG_URL = ConfigUtils.class.getClassLoader().getResource(configName);
-
+    private static final MainConfig config;
+    private static final URL CONFIG_URL = ConfigUtils.class.getClassLoader().getResource("config.json");
 
     static {
         URI uri = null;
