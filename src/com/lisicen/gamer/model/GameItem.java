@@ -11,7 +11,7 @@ public abstract class GameItem implements Draw, Move {
 
     private final Refresh refresh = Refresh.create(60, 3);
     private final int stepPX = 2;
-    private final int stepCount = 25;
+    private final int stepCount = 20;
 
     private final AtomicInteger x = new AtomicInteger(0);
     private final AtomicInteger y = new AtomicInteger(0);

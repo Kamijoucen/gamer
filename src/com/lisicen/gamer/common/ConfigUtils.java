@@ -33,5 +33,4 @@ public class ConfigUtils {
     public static MainConfig getConfig() {
         return config;
     }
-
 }

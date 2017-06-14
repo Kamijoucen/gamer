@@ -12,5 +12,4 @@ public enum  Bootstrap {
     public ApplicationContext getContext() {
         return context;
     }
-
 }

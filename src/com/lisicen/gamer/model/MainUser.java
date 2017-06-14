@@ -9,7 +9,7 @@ public class MainUser extends GameItem {
 
     @Override
     public void draw(Graphics g) {
-        g.fillOval(getX(), getY(), 50, 50);
+        g.fillOval(getX(), getY(), 40, 40);
     }
 
 }
