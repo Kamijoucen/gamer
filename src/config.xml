@@ -1,0 +1,5 @@
+<config>
+    <width val="1200"/>
+    <height val="900"/>
+    <fps val="60"/>
+</config>

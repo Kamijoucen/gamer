@@ -35,8 +35,6 @@ public class MainFrame extends JFrame {
 
     private void initView() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-//        this.setLayout(new BorderLayout());
-//        this.add(contentPanel, BorderLayout.CENTER);
         this.setContentPane(contentPanel);
         this.setSize(WIDTH, HEIGHT);
         this.setLocation(((int) screenSize.getWidth() >> 1) - (WIDTH >> 1), ((int) screenSize.getHeight() >> 1) - (HEIGHT >> 1));

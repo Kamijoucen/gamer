@@ -17,7 +17,8 @@ public class MainKeyController extends KeyAdapter {
     @Resource
     private ActiveScene scene;
 
-    private MainUser mainUser = new MainUser();
+    @Resource
+    private MainUser mainUser;
 
     public void init() {
         scene.items.add(mainUser);

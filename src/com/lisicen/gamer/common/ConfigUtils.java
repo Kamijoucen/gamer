@@ -1,22 +1,20 @@
 package com.lisicen.gamer.common;
 
 import com.alibaba.fastjson.JSON;
+import com.kamijoucen.xml.ast.result.DocumentResult;
 import com.lisicen.gamer.config.MainConfig;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
 
-/**
- * Created by X6TI on 2017/5/27.
- */
+
 public class ConfigUtils {
 
-    private static final String content;
-    private static final MainConfig config;
-    private static final URL CONFIG_URL = ConfigUtils.class.getClassLoader().getResource("config.json");
+//    private static final String content;
+    private static MainConfig config;
+    private static final URL CONFIG_URL = ConfigUtils.class.getClassLoader().getResource("config.xml");
 
     static {
         URI uri = null;
@@ -25,9 +23,12 @@ public class ConfigUtils {
         } catch (URISyntaxException e) {
             System.exit(-1);
         }
-        Path configPath = Paths.get(uri);
-        content = FileUtils.readFile(configPath);
-        config = JSON.parseObject(content, MainConfig.class);
+        File file = new File(uri);
+        DocumentResult result = DocumentResult.load(file.getAbsolutePath());
+        config = new MainConfig();
+        config.setFps(Integer.parseInt(result.child("config").child("fps").attr("val").val()));
+        config.setWidth(Integer.parseInt(result.child("config").child("width").attr("val").val()));
+        config.setHeight(Integer.parseInt(result.child("config").child("height").attr("val").val()));
     }
 
     public static MainConfig getConfig() {
